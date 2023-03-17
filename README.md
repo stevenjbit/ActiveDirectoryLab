@@ -3,7 +3,11 @@
  ### [YouTube Demonstration]
 
 <h2>Description</h2>
-In this lab we are going to walk through how to create an Active Directory home lab Environment utilizing Virtual Box. Configuring and running this lab will definitely help to develop your comprehension of how active directory and windows networking functions, so I would recommend practicing this lab a few times, doing further research on parts that are unclear, and eventually try to build it on your own without watching. 
+In this lab we will create an Active Directory home lab environment on our personal computer utilizing Virtual Box. This lab will resemble a miniature corporate network and can serve as an environment to explore and learn the parameters of Active Directory and Windows networking. 
+
+We will create two virtual machines in Virtual Box. The first VM will serve as a Domain Controller running on Windows Server 2019, enabling us to run Active Directory. This DC will have two network interface cards, an external one connected to our home internet (which will use DHCP on our home router to get addressing). The second NIC will be internal and serve as a private network on Virtual Box to which "clients" will be able to connect from our second VM. We will then set up a domain via Active Directory, we will configure NAT and routing and we will set up DHCP on the DC, so the "clients" on our private network can be assigned an IP address and reach the internet through our DC. Finally we will run a PowerShell script to quickly create users, similar to the process of onboarding employees in a corporation. We will then be able to then sign on as a user we created, on the second virtual machine, and access the Internet! 
+
+Configuring and running this lab will definitely help to develop your comprehension of how active directory and windows networking function. 
 <br />
 
 
@@ -19,8 +23,8 @@ In this lab we are going to walk through how to create an Active Directory home 
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Creating users with powershell: <br/>
-<img src="https://i.imgur.com/XTFrehG.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Setting up our first VM to serve as our DC: <br/>
+<img src="https://i.imgur.com/j7zvtyN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 

@@ -77,7 +77,7 @@ Configuring and running this lab will definitely help to develop your comprehens
 
 </details>
 
-5. Now we will install Active Directory Domain Services and create a domain. First in Server Manager, click on 'Add roles and features' and click next twice, then select our VM 'DC' to be our server. Next in Server Roles, select 'Active Directory Domain Services' and then click through to install this role. : <br/>
+5. Now we will install Active Directory Domain Services and create a domain. First in Server Manager, click on 'Add roles and features' and click next twice, then select our VM 'DC' to be our server. Next in Server Roles, select 'Active Directory Domain Services' and then click through to install this role. After the role installs, click the flag and click 'Promote this server to a domain controller'. In the Deployment configuration, select 'Add a new forest', and enter a root domain name such as 'mydomain.com'. Click next, then in domain controller options, enter our password (it won't be used), and click next a few times, then install. After installation, the computer will restart. Log in again, and then we will create out own administrator account. Select Start->Windows Administrative Tools->Active Directory Users and Computers, right-click on the domain and create a new Organizational Unit : <br/>
 
 <details>
 
@@ -87,6 +87,14 @@ Configuring and running this lab will definitely help to develop your comprehens
 <img src="https://i.imgur.com/ZNfHp68.jpg" height="80%" width="80%" />
 <img src="https://i.imgur.com/vO0GrYq.jpg" height="80%" width="80%" />
 <img src="https://i.imgur.com/5sJTalr.png" height="80%" width="80%" />
+<img src="https://i.imgur.com/WXBDLkf.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/kV1fod1.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/vKHvYg4.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/X2aFb7z.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/gmkj3Wt.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/Cm1K418.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/mj4LTRQ.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/qBCSyd0.jpg" height="80%" width="80%" />
 
 </details>
 

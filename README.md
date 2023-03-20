@@ -105,26 +105,43 @@ Configuring and running this lab will definitely help to develop your comprehens
 
 </details>
 
-6. After installation of AD/DS, click the flag and select "promote the computer to a domain" to create and configure the domain, selecting "add new forest" and entering "mydomain.com" or something similar: <br/>
-<img src="" height="80%" width="80%" />
 
+6. Now we will set up RAS / NAT (Remote Access Server and Network Address Translation) to allow the "clients" we will create later to access the internet through our Domain Controller. First in Server Manager, select "Add Roles and Features", select our server and then "Remote Access" for the Server role. Clicking next to the Role Services, select "Routing" and click next a few times to install the role. Next to install NAT for our "clients" to access the internet, we will go to tools->Routing and Remote Access, right-click on 'DC', select 'Configure and Enable Routing and Remote Access", select NAT, select our 'Internet' interface, and hit Finish. We then see our DC server with a green arrow indicating it is totally configured (This part may require two tries). 
 
-7. After restarting, we will create our own domain admin account. Select the Start menu, and in the Windows Administrator Tools folder, open "Active Directory Users and Computers". In the mydomain.com folder, create a new Organizational Unit and name it "_ADMINS" or something similar. Finally, create a user (yourself), and then in the "Member Of" folder of their properties, enter "domain admins" and add to create a domain admin account:<br/>
-<img src="" height="80%" width="80%" />
+<details>
+ 
+ <summary>Expand images</summary>
+ 
+<img src="https://i.imgur.com/I2vRgAV.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/cAbvVE6.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/5IEckbg.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/POEQV0Y.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/w9nnh9x.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/atp3irY.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/MUmrO9w.jpg" height="80%" width="80%" />
+ <img src="https://i.imgur.com/W1ZHO1j.jpg" height="80%" width="80%" />
+ 
+ </details>
+ 
+7. The next step is to set up a DHCP server on our domain controller for our Windows 10 clients. We will create a scope of IP addresses and a lease time for our Windows 10 clients to access the internet, just like in an office or a school. First select 'Add Roles and Features' in Server Manager, hit next, select our server (note the name change), select 'DHCP Server' in the Server Roles, click 'add features' and click next a few times and install the DHCP role. After that is installed, we will set up our scope. Select tools->DHCP to open the DHCP control panel, right-click on IPv4 (note it is currently down) and select 'new scope' to open the creation wizard. We might name the scope '172.16.0.100-200'. Click next and then enter the start and end IP addresses of our scope, and the address /24 for the subnet mask. Select next to pass through the exclusions which we aren't using, and keep the standard 8-day IP address lease duration. Next we will configure DHCP options to tell the clients which server to use for DNS and default gateway. 
+ 
+ <details>
+  
+  <summary>Expand images</summary>
+  
+<img src="https://i.imgur.com/81P2MTl.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/9foLi8d.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/3i5JEOa.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/e8Gp4Nr.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/RRvffsC.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/oHC7WC0.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/1QrSC2F.jpg" height="80%" width="80%" />
+  <img src="" height="80%" width="80%" />
+  <img src="" height="80%" width="80%" />
+  <img src="" height="80%" width="80%" />
+  <img src="" height="80%" width="80%" />
 
-
-8. You should now see the user in the _ADMINS folder<br/>
-<img src="" height="80%" width="80%" />
-
-
-9. Now we will set up Routing and Remote Access for our Domain Controller. First, select "Add Roles and Features" and select our server and then "Remote Access" for the role. On the Role Services, select "Routing" and install the role.   <br/>
-<img src="" height="80%" width="80%" />
-
-
-10. To figure the role, click on tools at the top right of Server Manager and select "Routing and Remote Access". Right click on our DC in left column of the window, and select "Network Address Translation" NAT on the configuration page. Finally select the "_INTERNET_" to use this public interface to connect to the Internet: (This part may require trying to open the windows twice if the adapters do not appear): <br/>
-<img src="" height="80%" width="80%" />
-
-
+ </details>
 
 <br />
 <br />

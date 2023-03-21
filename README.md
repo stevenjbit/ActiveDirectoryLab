@@ -6,7 +6,7 @@
 In this lab we will create an Active Directory home lab environment on our personal computer utilizing Virtual Box. This lab will resemble a miniature corporate network and can serve as an environment to explore and learn the parameters of Active Directory and Windows networking.
 We will create two virtual machines in Virtual Box. The first VM will run on Windows Server 2019 and run the Active Directory Domain Service, acting as a Domain Controller. This DC will have two network interface cards, an external one connected to our home internet (which will use DHCP on our home router to get addressing). The second NIC will be internal and serve as a private network on Virtual Box to which "clients" will be able to connect from our second VM. We will then set up a domain via Active Directory, we will configure NAT and routing and we will set up DHCP on the DC, so the "clients" on our private network can be assigned an IP address and reach the internet through our DC. Finally we will run a PowerShell script to quickly create users, similar to the process of onboarding employees in a corporation. We will then be able to then sign on as a user we created, on the second virtual machine, and access the Internet! 
 
-Configuring and running this lab will definitely help to develop your comprehension of how active directory and windows networking function. 
+Configuring and running this lab will definitely help to develop our comprehension of how active directory and windows networking function. 
 <br />
 
 
@@ -141,6 +141,21 @@ Configuring and running this lab will definitely help to develop your comprehens
   <img src="https://i.imgur.com/PoAwyvL.jpg" height="80%" width="80%" />
 
  </details>
+ 
+ 8. Now we will use a PowerShell script to quickly create ~1000 users on our Active Directory. This will give us some practice using PowerShell and scripting. First we will open Windows PowerShell ISE as an administrator. Then we will open our PowerShell script in the folder to which we have downloaded it on our VM (desktop in this case). Next we will use the command 'Set-ExecutionPolicy Unrestricted' to allow us to run our script. Then we will use the Change Directory Command to go to the folder where our script and folder is located, in this case 'cd C:\Users\a-sjbit\Desktop\*folder*\*folder*' and use the ls command to list the files in the folder. After we verify we are in the folder with the script, we can press play and run the script to create our users. After the script runs, we can go to Start->Windows Administrative Tools->Active Directory Users and Computers to see the users which we have created. This is similar to onboarding new employees in a corporate network. 
+ 
+ <details>
+ 
+ <summary>Expand images</summary>
+ 
+<img src="https://i.imgur.com/n4oiyEk.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/gaEPUrl.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/gYpP0Fi.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/HkMc39q.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/e3QGcjp.jpg" height="80%" width="80%" />
+<img src="https://i.imgur.com/tLF1M7f.jpg" height="80%" width="80%" />
+
+</details>
 
 <br />
 <br />

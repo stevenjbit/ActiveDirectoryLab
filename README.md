@@ -123,7 +123,7 @@ Configuring and running this lab will definitely help to develop your comprehens
  
  </details>
  
-7. The next step is to set up a DHCP server on our domain controller for our Windows 10 clients. We will create a scope of IP addresses and a lease time for our Windows 10 clients to access the internet, just like in an office or a school. First select 'Add Roles and Features' in Server Manager, hit next, select our server (note the name change), select 'DHCP Server' in the Server Roles, click 'add features' and click next a few times and install the DHCP role. After that is installed, we will set up our scope. Select tools->DHCP to open the DHCP control panel, right-click on IPv4 (note it is currently down) and select 'new scope' to open the creation wizard. We might name the scope '172.16.0.100-200'. Click next and then enter the start and end IP addresses of our scope, and the address /24 for the subnet mask. Select next to pass through the exclusions which we aren't using, and keep the standard 8-day IP address lease duration. Next we will configure DHCP options to tell the clients which server to use for DNS and default gateway. 
+7. The next step is to set up a DHCP server on our domain controller for our Windows 10 clients. We will create a scope of IP addresses and a lease time for our Windows 10 clients to access the internet, just like in an office or a school. First select 'Add Roles and Features' in Server Manager, hit next, select our server (note the name change), select 'DHCP Server' in the Server Roles, click 'add features' and click next a few times and install the DHCP role. After that is installed, we will set up our scope. Select tools->DHCP to open the DHCP control panel, right-click on IPv4 (note it is currently down) and select 'new scope' to open the creation wizard. We might name the scope '172.16.0.100-200'. Click next and then enter the start and end IP addresses of our scope, and the address /24 for the subnet mask. Select next to pass through the exclusions which we aren't using, and keep the standard 8-day IP address lease duration. Lastly, in the DHCP control panel, right-click the dc.mydomain.com server and hit 'authorize'. We now see the our server's IPv4 up and running with the scope configured. Finally, now that DNS is set up, to improve browsing, in Server Manager, select 'Configure this local server', then click 'on' next to Security Configuration and turn it off for Administrators and Users. 
  
  <details>
   
@@ -136,10 +136,9 @@ Configuring and running this lab will definitely help to develop your comprehens
   <img src="https://i.imgur.com/RRvffsC.jpg" height="80%" width="80%" />
   <img src="https://i.imgur.com/oHC7WC0.jpg" height="80%" width="80%" />
   <img src="https://i.imgur.com/1QrSC2F.jpg" height="80%" width="80%" />
-  <img src="" height="80%" width="80%" />
-  <img src="" height="80%" width="80%" />
-  <img src="" height="80%" width="80%" />
-  <img src="" height="80%" width="80%" />
+  <img src="https://i.imgur.com/DAc9S7u.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/lCJJnMQ.jpg" height="80%" width="80%" />
+  <img src="https://i.imgur.com/PoAwyvL.jpg" height="80%" width="80%" />
 
  </details>
 

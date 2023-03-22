@@ -4,11 +4,9 @@
 
 <h2>Description</h2>
 In this lab we will create an Active Directory home lab environment on our personal computer utilizing Virtual Box. This lab will resemble a miniature corporate network and can serve as an environment to explore and learn the parameters of Active Directory and Windows networking.
-We will create two virtual machines in Virtual Box. The first VM will run on Windows Server 2019 and run the Active Directory Domain Service, acting as a Domain Controller. This DC will have two network interface cards, an external one connected to our home internet (which will use DHCP on our home router to get addressing). The second NIC will be internal and serve as a private network on Virtual Box to which "clients" will be able to connect from our second VM. We will then set up a domain via Active Directory, we will configure NAT and routing and we will set up DHCP on the DC, so the "clients" on our private network can be assigned an IP address and reach the internet through our DC. Finally we will run a PowerShell script to quickly create users, similar to the process of onboarding employees in a corporation. We will then be able to then sign on as a user we created, on the second virtual machine, and access the Internet! 
+We will create two virtual machines in Virtual Box. The first VM will run on Windows Server 2019 and run the Active Directory Domain Service, acting as a Domain Controller. This DC will have two network interface adapters, an external one connected to our home internet (which will use DHCP on our home router to get addressing). The second adapter will be internal and serve as a private network on Virtual Box to which "clients" will be able to connect from our second VM. We will then set up a domain via Active Directory, we will configure NAT and routing and we will set up DHCP on the DC, so the "clients" on our private network can be assigned an IP address and reach the internet through our DC. Finally we will run a PowerShell script to quickly create users, similar to the process of onboarding employees in a corporation. We will then be able to then sign on as a user we created, on the second virtual machine, and access the Internet! 
 
-Configuring and running this lab will definitely help to develop our comprehension of how active directory and windows networking function. 
-<br />
-
+Configuring and running this lab will help to develop our comprehension of how active directory and windows networking function. 
 
 <h2>Languages and Utilities Used</h2>
 
@@ -178,12 +176,6 @@ Configuring and running this lab will definitely help to develop our comprehensi
  <img src="https://i.imgur.com/DYr7QbS.jpg" height="80%" width="80%" />
  
  </details>
- 
-
-<br />
-<br />
-
-</p>
 
 <!--
  ```diff

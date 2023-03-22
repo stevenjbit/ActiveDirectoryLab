@@ -5,8 +5,9 @@
 <h2>Description</h2>
 In this lab we will create an Active Directory home lab environment on our personal computer utilizing Virtual Box. This lab will resemble a miniature corporate network and can serve as an environment to explore and learn the parameters of Active Directory and Windows networking.
 We will create two virtual machines in Virtual Box. The first VM will run on Windows Server 2019 and run the Active Directory Domain Service, acting as a Domain Controller. This DC will have two network interface adapters, an external one connected to our home internet (which will use DHCP on our home router to get addressing). The second adapter will be internal and serve as a private network on Virtual Box to which "clients" will be able to connect from our second VM. We will then set up a domain via Active Directory, we will configure NAT and routing and we will set up DHCP on the DC, so the "clients" on our private network can be assigned an IP address and reach the internet through our DC. Finally we will run a PowerShell script to quickly create users, similar to the process of onboarding employees in a corporation. We will then be able to then sign on as a user we created, on the second virtual machine, and access the Internet! 
-
-Configuring and running this lab will help to develop our comprehension of how active directory and windows networking function. 
+<br><br>
+Configuring and running this lab will help to develop our comprehension of how active directory and windows networking function.
+</br>
 
 <h2>Languages and Utilities Used</h2>
 
@@ -19,6 +20,14 @@ Configuring and running this lab will help to develop our comprehension of how a
 - <b>Windows Server 2019</b>
 
 <h2>Program walk-through:</h2>
+
+<details>
+
+<summary>Network and Computer diagram</summary>
+
+<img src="https://i.imgur.com/wGnQv1s.jpg" height="80%" width="80%" />
+
+</details>
 
 1. First we will create our first VM with Windows Server 2019 for our Domain Controller. In Virtual Box, select "New", name it "DC". In the settings for the VM, give it 2 GB of ram, 20 GB of storage, and one more processor core to speed it up, if your computer has enough to share. After creating the VM, go to its settings, then in general->advanced, apply bi-directional mouse controls. Next, in the network settings, create two network adapters: one external running NAT and one internal adapter. Finally, start up the VM, mount your .iso for Server 2019, and complete installation, first by selecting "Standard Desktop Experience" and then doing a custom install on our VM storage device. After leaving it alone for few minutes of set up, we will be prompted to create a standard administrator account. Give it an easy, memorable password (e.g. 'Password1') which we will use for every password in this lab (this is OK for a lab environment). After set up is complete, we can log in to our admin account by selecting input->keyboard->CTRL+ALT+Delete. <br/>
 
@@ -155,7 +164,7 @@ Configuring and running this lab will help to develop our comprehension of how a
 
 </details>
 
-9. Our final step is to create our client computer, which will be given an IP address and access the internet through our DC. First we create a new VM in VirtualBox, assigning it a sufficient amount of processors, RAM and storage. Then we adjust the settings of our VM to include bi-directional mouse controls and choose an internal network for the network adapter. Then we mount the .iso of Windows 10 we downloaded and install the operating system. During installation, be sure to select Windows 10 Pro (otherwise we will not be able to access the domain) and select 'I don't have a product key' and make a local account (selecting 'I don't have internet'), naming it 'user' and don't use a password. After installation has finished, right click on the start button, select system, and go to 'rename this PC (advanced)'. In the system properties panel, select 'change' and name the computer 'CLIENT1', then click domain and enter our domain name, 'mydomain.com'. After clicking OK you will be prompted to enter administrator credentials from our DC. After entering those, the computer will restart. On the sign in screen, we can choose a user we created from our DC, then we can log in to our domain, just as we would on a corporate network or a school. Back on our DC, we will now see our "client" has been given an IP address lease (in Server Manager->tools->DHCP). Finally, back on our client computer, we can run 'whoami', 'ipconfig' and 'ping google.com' to see that we are logged in as a user we created, and have full access to the internet through our DC. Our lab is now hopefully functioning just as our initial diagram, and we can explore our set up!
+9. Our final step is to create our client computer, which will be given an IP address and access the internet through our DC. First we create a new VM in VirtualBox, assigning it a sufficient amount of processors, RAM and storage. Then we adjust the settings of our VM to include bi-directional mouse controls and choose an internal network for the network adapter. Then we mount the .iso of Windows 10 we downloaded and install the operating system. During installation, be sure to select Windows 10 Pro (otherwise we will not be able to access the domain) and select 'I don't have a product key' and make a local account (selecting 'I don't have internet'), naming it 'user' and don't use a password. After installation has finished, right click on the start button, select system, and go to 'rename this PC (advanced)'. In the system properties panel, select 'change' and name the computer 'CLIENT1', then click domain and enter our domain name, 'mydomain.com'. After clicking OK you will be prompted to enter administrator credentials from our DC. After entering those, the computer will restart. On the sign in screen, we can choose a user we created from our DC, then we can log in to our domain, just as we would on a corporate network or a school. Back on our DC, we will now see our "client" has been given an IP address lease (in Server Manager->tools->DHCP). Finally, back on our client computer, we can run 'whoami', 'ipconfig' and 'ping google.com' to see that we are logged in as a user we created, and have full access to the internet through our DC.
 
 <details>
  
@@ -176,6 +185,10 @@ Configuring and running this lab will help to develop our comprehension of how a
  <img src="https://i.imgur.com/DYr7QbS.jpg" height="80%" width="80%" />
  
  </details>
+ 
+ <br><br>Our lab is now hopefully functioning just as our initial diagram, and we can explore our set up!
+
+</br>
 
 <!--
  ```diff

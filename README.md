@@ -1,3 +1,4 @@
+<img src="https://i.imgur.com/hxzDN1H.png" height="80%" width="80%" />
 <h1>Active Directory Home Lab</h1>
 
 <h2>Description</h2>
